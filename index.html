@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AlwayStart — The World's First Automatic Battery Protector</title>
+<meta name="description" content="AlwayStart preserves enough of your 12V battery's power so your vehicle is always ready to start. Install once, then Park & WalkAway. Zero maintenance, zero anxiety.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="brand">
+      <span class="mark"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z" fill="#05140b"/></svg></span>
+      <span>AlwayStart<small>A Clarity Development Brand</small></span>
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="how-it-works.html">How It Works</a></li>
+        <li><a href="technology.html">Technology</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+    </nav>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn-ghost">Contact</a>
+      <a href="pricing.html" class="btn btn-primary">Reserve Yours</a>
+      <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="grid-bg"></div>
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">The world's first automatic battery protector</span>
+      <h1>Conquer dead<br>batteries. <span>For good.</span></h1>
+      <p class="lead">AlwayStart preserves just enough of your battery's power so your vehicle is always ready to start — even after weeks or months parked. Install once, then Park&nbsp;&&nbsp;WalkAway.™</p>
+      <div class="hero-cta">
+        <a href="pricing.html" class="btn btn-primary btn-lg">Reserve Yours — from $229</a>
+        <a href="how-it-works.html" class="btn btn-ghost btn-lg">See how it works</a>
+      </div>
+      <div class="hero-proof">
+        <div><b>11,000+</b>hours endurance tested</div>
+        <div><b>1,200A</b>solid-state peak</div>
+        <div><b>2×</b>battery lifespan</div>
+      </div>
+    </div>
+    <div class="slider reveal" id="heroSlider" aria-roledescription="carousel" aria-label="AlwayStart highlights">
+      <div class="slide-progress" id="slideProgress"></div>
+      <div class="slides">
+
+        <div class="slide s1 active">
+          <div class="slide-inner">
+            <div class="device-unit">
+              <div class="logo">ALWAYSTART</div>
+              <div class="leds"><span class="led on-g"></span><span class="led on-b"></span><span class="led"></span></div>
+              <span class="term l"></span><span class="term r"></span>
+            </div>
+            <span class="kicker">● Live · Protecting</span>
+            <h3>Always watching your start reserve</h3>
+            <p>Solid-state monitoring, 24/7, with zero cords.</p>
+          </div>
+        </div>
+
+        <div class="slide s2">
+          <div class="slide-inner">
+            <div class="device-unit">
+              <div class="logo">ALWAYSTART</div>
+              <div class="leds"><span class="led on-g"></span><span class="led"></span><span class="led on-b"></span></div>
+              <span class="term l"></span><span class="term r"></span>
+            </div>
+            <span class="kicker">● Isolated · Reserve Safe</span>
+            <h3>Parked for months? Still starts.</h3>
+            <p>It isolates before parasitic drain can strand you.</p>
+          </div>
+        </div>
+
+        <div class="slide s3">
+          <div class="slide-inner">
+            <div class="big">1,200A<small>Solid-state peak · 200A continuous</small></div>
+            <span class="kicker">Engineered for extremes</span>
+            <h3>Headroom for winches, audio &amp; big builds</h3>
+          </div>
+        </div>
+
+        <div class="slide s4">
+          <div class="slide-inner">
+            <div class="big">11,000+<small>Hours endurance tested · 450+ days in the field</small></div>
+            <span class="kicker">Proven, not promised</span>
+            <h3>From Utah cold to Palm Springs heat</h3>
+          </div>
+        </div>
+
+      </div>
+
+      <button class="slide-arrow prev" id="slidePrev" aria-label="Previous slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <button class="slide-arrow next" id="slideNext" aria-label="Next slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 6l6 6-6 6"/></svg></button>
+      <div class="slide-dots" id="slideDots"></div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="strip">
+  <div class="container strip-inner">
+    <span class="strip-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V5l-8-3Z"/></svg> MIL-STD-810H · IP68</span>
+    <span class="strip-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V5l-8-3Z"/></svg> 3 Patents Pending</span>
+    <span class="strip-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V5l-8-3Z"/></svg> Independent FMEA by ESi</span>
+    <span class="strip-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V5l-8-3Z"/></svg> $251K raised · 891 backers</span>
+    <span class="strip-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V5l-8-3Z"/></svg> Engineered in Southern California</span>
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<section>
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow amber">The problem</span>
+      <h2>A dead battery is never convenient.</h2>
+      <p class="lead">Dead batteries are the #1 reason for roadside calls and the #1 warranty replacement at dealerships. Modern vehicles run 20+ microcontrollers that quietly drain power while parked. A few weeks idle can fully discharge a battery — and every deep discharge accelerates sulfation, permanently shrinking capacity.</p>
+    </div>
+    <div class="grid-3">
+      <div class="card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4m0 4h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg></div>
+        <h3>Parasitic drain</h3>
+        <p>Alarms, keyless entry, and modules sip current 24/7. Leave the car a few weeks and the starting charge is gone.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg></div>
+        <h3>Sulfation kills batteries</h3>
+        <p>Each deep discharge builds sulfate crystals that never fully reverse — cutting capacity and lifespan with every cycle.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 1 1-9-9m9 0v6h-6"/></svg></div>
+        <h3>The old fixes react too late</h3>
+        <p>Trickle chargers and jump packs only help if you remember them — and most respond <em>after</em> the failure, not before.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE FIX / COMPARE -->
+<section class="alt">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">A new category</span>
+      <h2>Not a charger. Not a jump pack.<br>A proactive battery <span style="color:var(--volt)">protector.</span></h2>
+      <p class="lead">AlwayStart sits between your battery and the vehicle, continuously measuring energy, health, and temperature. It calculates the minimum charge needed to start <em>your specific vehicle</em> — then electronically isolates the battery the moment drain threatens that reserve.</p>
+    </div>
+    <div class="compare">
+      <div class="col old reveal">
+        <h3><svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M15 9l-6 6M9 9l6 6"/></svg> The old way</h3>
+        <ul>
+          <li><svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg> Cords, outlets, and clutter in the garage</li>
+          <li><svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg> You have to remember to plug in</li>
+          <li><svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg> Jump packs react only after you're stranded</li>
+          <li><svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg> Manual disconnects use fixed thresholds</li>
+        </ul>
+      </div>
+      <div class="col new reveal">
+        <h3><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg> The AlwayStart way</h3>
+        <ul>
+          <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Fully automatic — no cords, no intervention</li>
+          <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Proactive — prevents the failure before it happens</li>
+          <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Self-calibrating algorithm, never a premature shutoff</li>
+          <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Doubles battery life · up to 365 days of storage</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS TEASER -->
+<section>
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">How it works</span>
+      <h2>Install once. Then forget it's there.</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><span class="num"></span><div><h3>Install in minutes</h3><p>One-time setup, no special tools. Rotate the battery 180°, mount with the integrated bracket, and connect the terminals.</p></div></div>
+      <div class="step reveal"><span class="num"></span><div><h3>It learns your vehicle</h3><p>A 32-bit ARM processor runs a patent-pending adaptive algorithm, calculating the exact start reserve your vehicle needs.</p></div></div>
+      <div class="step reveal"><span class="num"></span><div><h3>It isolates automatically</h3><p>When parasitic drain threatens that reserve, the solid-state switch silently isolates the battery — preserving your start.</p></div></div>
+      <div class="step reveal"><span class="num"></span><div><h3>Press ON and go</h3><p>Back at the vehicle? One press reconnects instantly. Turn the key — it starts. Park&nbsp;&&nbsp;WalkAway.™</p></div></div>
+    </div>
+    <div style="margin-top:36px"><a href="how-it-works.html" class="btn btn-ghost">Full walkthrough →</a></div>
+  </div>
+</section>
+
+<!-- STAT BAND -->
+<section class="statband">
+  <div class="container">
+    <div class="grid-4">
+      <div class="stat reveal"><b>11,000+</b><span>Hours of endurance testing</span></div>
+      <div class="stat reveal"><b>450+</b><span>Days of field testing</span></div>
+      <div class="stat reveal"><b>&lt;1µA</b><span>Draw in UltraSleep mode</span></div>
+      <div class="stat reveal"><b>250°F</b><span>Rated operating temperature</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF -->
+<section class="alt">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow blue">Engineered for extremes</span>
+      <h2>Built to outlast the vehicle it protects.</h2>
+    </div>
+    <div class="grid-3">
+      <div class="card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z"/></svg></div>
+        <h3>Solid-state core</h3>
+        <p>A custom switch rated 1,200A peak / 200A continuous, with no moving parts and up to 200× the service life of relay-based alternatives.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"/></svg></div>
+        <h3>Adaptive intelligence</h3>
+        <p>A 32-bit ARM Cortex processor runs a patent-pending dynamic-threshold algorithm — smarter than any fixed-voltage cutoff.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V5l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <h3>Independently validated</h3>
+        <p>Third-party FMEA by forensic-engineering firm ESi across electrical, mechanical, thermal, and software domains — rare rigor for crowdfunded hardware.</p>
+      </div>
+    </div>
+    <div style="margin-top:36px"><a href="technology.html" class="btn btn-ghost">Explore the technology →</a></div>
+  </div>
+</section>
+
+<!-- PRICING TEASER -->
+<section>
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Reserve yours</span>
+      <h2>Pick your protection.</h2>
+      <p class="lead">Crowdfunding pricing. Single units ship December 2026; the dual-battery kit ships March 2027.</p>
+    </div>
+    <div class="tiers">
+      <div class="tier reveal">
+        <h3>Single Unit</h3>
+        <p class="muted">For one 12V vehicle</p>
+        <div class="price">$229</div>
+        <div class="msrp">MSRP ~$349</div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Full automatic protection</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> 3-in-1 LED monitoring</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> No remote</li>
+        </ul>
+        <a href="pricing.html" class="btn btn-ghost">Choose</a>
+      </div>
+      <div class="tier best reveal">
+        <span class="tag">Most popular</span>
+        <h3>Single + Remote</h3>
+        <p class="muted">Recommended for most buyers</p>
+        <div class="price">$249</div>
+        <div class="msrp">MSRP ~$384</div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Everything in Single Unit</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Wired cabin remote</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> One-press reconnect from inside</li>
+        </ul>
+        <a href="pricing.html" class="btn btn-primary">Choose</a>
+      </div>
+      <div class="tier reveal">
+        <h3>Dual-Battery Kit</h3>
+        <p class="muted">For diesel trucks</p>
+        <div class="price">$445</div>
+        <div class="msrp">MSRP ~$628</div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Protects two 12V batteries</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Wired remote included</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Ships March 2027</li>
+        </ul>
+        <a href="pricing.html" class="btn btn-ghost">Choose</a>
+      </div>
+    </div>
+    <div class="compat reveal" style="margin-top:32px">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4m0 4h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg>
+      <p><b>Check compatibility first.</b> AlwayStart works with virtually all 12V lead-acid batteries in gas and diesel vehicles. It is <b>not</b> for EVs, hybrids, Start/Stop vehicles, lithium systems, or 24V configurations.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ TEASER -->
+<section class="alt">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Common questions</span>
+      <h2>Good to know.</h2>
+    </div>
+    <div class="faq">
+      <div class="qa reveal"><button>Is it really fully automatic? <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="ans"><p>Yes. Once installed, AlwayStart monitors and isolates your battery on its own — no cords, no schedule, no reminders. The only manual step is one press of ON when you return after a long isolation.</p></div></div>
+      <div class="qa reveal"><button>Will it drain my battery itself? <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="ans"><p>Barely. Standby draw is around 5mA, and in UltraSleep mode it falls below 1 microamp — essentially invisible drain.</p></div></div>
+      <div class="qa reveal"><button>Does it fit my vehicle? <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="ans"><p>If it's a gas or diesel vehicle with a 12V lead-acid battery (AGM, GEL, EFB, sealed, or flooded), almost certainly. It does not support EVs, hybrids, Start/Stop, lithium, or 24V systems.</p></div></div>
+    </div>
+    <div class="center" style="margin-top:32px"><a href="faq.html" class="btn btn-ghost">See all FAQs →</a></div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section>
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">From the people who backed it</span>
+      <h2>891 backers. Zero dead batteries.</h2>
+      <p class="lead">Early supporters and field testers on what it's like to Park&nbsp;&&nbsp;WalkAway.™</p>
+    </div>
+    <div class="quotes">
+      <div class="quote reveal">
+        <div class="stars">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+        </div>
+        <p>"My '69 Camaro used to sit all winter and come out dead every spring. I installed it once, walked away for four months, and it turned over on the first crank. No cords in my garage anymore."</p>
+        <div class="who"><span class="av">RM</span><div><b>Ray M.</b><span>Classic car owner · Backer</span></div></div>
+      </div>
+      <div class="quote reveal">
+        <div class="stars">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+        </div>
+        <p>"I run a winch and a big audio setup on my overland rig. The 1,200A headroom doesn't flinch, and after dusty desert trips it just keeps protecting. This is the part I stopped worrying about."</p>
+        <div class="who"><span class="av">DT</span><div><b>Devin T.</b><span>Overlander · Field tester</span></div></div>
+      </div>
+      <div class="quote reveal">
+        <div class="stars">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg>
+        </div>
+        <p>"Two batteries in my diesel and I was replacing one every couple years. The dual-battery kit caught the drain before it ever became a no-start. The cabin remote is the cherry on top."</p>
+        <div class="who"><span class="av">CL</span><div><b>Carla L.</b><span>Diesel truck owner · Backer</span></div></div>
+      </div>
+    </div>
+    <p class="muted center" style="margin-top:24px;font-size:.84rem">Representative quotes from AlwayStart backers and field testers. Names shortened for privacy.</p>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="news">
+  <div class="container">
+    <div class="news-card reveal">
+      <span class="eyebrow">Stay in the loop</span>
+      <h2>Be first to know when units ship.</h2>
+      <p class="lead" style="margin:0 auto">Get launch updates, install tips, and compatibility news. No spam — just the moments that matter. Single units ship December 2026.</p>
+      <form class="news-form" data-news>
+        <input type="email" placeholder="you@email.com" aria-label="Email address" required>
+        <button type="submit" class="btn btn-primary">Subscribe</button>
+      </form>
+      <p class="news-ok">You're on the list — watch your inbox. (Prototype: not actually subscribed.)</p>
+      <p class="news-fine">By subscribing you agree to receive emails from AlwayStart. Unsubscribe anytime.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band">
+  <div class="container reveal">
+    <span class="eyebrow">Install once</span>
+    <h2>Drive More, Worry Less.™</h2>
+    <p class="lead" style="margin:0 auto">Join 891 backers who said no more dead batteries. Reserve your AlwayStart today.</p>
+    <div class="btns">
+      <a href="pricing.html" class="btn btn-primary btn-lg">Reserve Yours — from $229</a>
+      <a href="how-it-works.html" class="btn btn-ghost btn-lg">How it works</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site">
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <a href="index.html" class="brand"><span class="mark"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z" fill="#05140b"/></svg></span><span>AlwayStart</span></a>
+        <p class="foot-note">The world's first automatic battery protector. Park&nbsp;&&nbsp;WalkAway.™ A Clarity Development, LLC brand, engineered in Southern California.</p>
+        <div class="foot-news">
+          <form data-news>
+            <input type="email" placeholder="Email for launch updates" aria-label="Email address" required>
+            <button type="submit">Subscribe</button>
+          </form>
+          <p class="news-ok">Subscribed — thanks! (Prototype.)</p>
+        </div>
+      </div>
+      <div><h4>Product</h4><ul><li><a href="how-it-works.html">How It Works</a></li><li><a href="technology.html">Technology</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="faq.html">FAQ</a></li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="about.html">About</a></li><li><a href="about.html">Founders</a></li><li><a href="contact.html">Contact</a></li><li><a href="#" data-demo="Press kit — coming soon.">Press</a></li></ul></div>
+      <div><h4>Connect</h4><ul><li><a href="#" data-demo="Instagram @alwaystartco">Instagram</a></li><li><a href="#" data-demo="Facebook: AlwayStart">Facebook</a></li><li><a href="contact.html">Support</a></li></ul></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Clarity Development, LLC · 9415 Culver Blvd, Culver City, CA 90232 · 424.404.5840</span>
+      <span>Prototype for demonstration. Park&nbsp;&&nbsp;WalkAway™ and Drive More, Worry Less™ are trademarks of Clarity Development, LLC.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

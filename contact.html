@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — AlwayStart</title>
+<meta name="description" content="Get in touch with the AlwayStart team. Questions about compatibility, your order, or partnerships — we're here.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="brand"><span class="mark"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z" fill="#05140b"/></svg></span><span>AlwayStart<small>A Clarity Development Brand</small></span></a>
+    <nav><ul class="nav-links">
+      <li><a href="how-it-works.html">How It Works</a></li>
+      <li><a href="technology.html">Technology</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+    </ul></nav>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn-ghost active">Contact</a>
+      <a href="pricing.html" class="btn btn-primary">Reserve Yours</a>
+      <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<section class="pagehero">
+  <div class="container">
+    <div class="crumb"><a href="index.html">Home</a> / Contact</div>
+    <span class="eyebrow">We're listening</span>
+    <h1>Get in touch.</h1>
+    <p class="lead" style="margin-top:20px">Questions about compatibility, your reservation, or a partnership? Reach the team in Culver City.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="hero-grid" style="align-items:start">
+      <!-- FORM -->
+      <form id="contactForm" class="form reveal">
+        <div class="form-row">
+          <div><label for="name">Name</label><input id="name" type="text" placeholder="Your name" required></div>
+          <div><label for="email">Email</label><input id="email" type="email" placeholder="you@email.com" required></div>
+        </div>
+        <div>
+          <label for="topic">What's this about?</label>
+          <select id="topic">
+            <option>Compatibility question</option>
+            <option>My reservation / order</option>
+            <option>Technical / install support</option>
+            <option>Press or partnership</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div>
+          <label for="vehicle">Vehicle (optional)</label>
+          <input id="vehicle" type="text" placeholder="e.g. 1969 Camaro, F-250 diesel, overland rig">
+        </div>
+        <div>
+          <label for="message">Message</label>
+          <textarea id="message" rows="5" placeholder="How can we help?" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="justify-content:center">Send message</button>
+        <p class="form-ok" style="display:none;color:var(--volt);font-weight:600;font-size:.92rem">Thanks — your message has been received. (Prototype: not actually sent.)</p>
+      </form>
+
+      <!-- CONTACT DETAILS -->
+      <div class="reveal">
+        <div class="card" style="margin-bottom:20px">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <h3>Headquarters</h3>
+          <p>9415 Culver Blvd<br>Culver City, CA 90232</p>
+        </div>
+        <div class="card" style="margin-bottom:20px">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z"/></svg></div>
+          <h3>Phone</h3>
+          <p>424.404.5840</p>
+        </div>
+        <div class="card">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></div>
+          <h3>Online</h3>
+          <p>www.AlwayStart.com<br>Instagram <a href="#" data-demo="@alwaystartco" style="color:var(--volt)">@alwaystartco</a> · <a href="#" data-demo="Facebook: AlwayStart" style="color:var(--volt)">Facebook</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="compat reveal" style="margin-top:36px">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4m0 4h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg>
+      <p>Not sure if AlwayStart fits your vehicle? Tell us the make, model, and battery setup and we'll confirm before you reserve. Quick reminder: it's for gas and diesel vehicles with 12V lead-acid batteries — <b>not</b> EVs, hybrids, Start/Stop, lithium, or 24V.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="container">
+    <div class="foot-grid">
+      <div><a href="index.html" class="brand"><span class="mark"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z" fill="#05140b"/></svg></span><span>AlwayStart</span></a><p class="foot-note">The world's first automatic battery protector. Park&nbsp;&&nbsp;WalkAway.™ A Clarity Development, LLC brand, engineered in Southern California.</p>
+        <div class="foot-news">
+          <form data-news>
+            <input type="email" placeholder="Email for launch updates" aria-label="Email address" required>
+            <button type="submit">Subscribe</button>
+          </form>
+          <p class="news-ok">Subscribed — thanks! (Prototype.)</p>
+        </div></div>
+      <div><h4>Product</h4><ul><li><a href="how-it-works.html">How It Works</a></li><li><a href="technology.html">Technology</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="faq.html">FAQ</a></li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="about.html">About</a></li><li><a href="about.html">Founders</a></li><li><a href="contact.html">Contact</a></li><li><a href="#" data-demo="Press kit — coming soon.">Press</a></li></ul></div>
+      <div><h4>Connect</h4><ul><li><a href="#" data-demo="Instagram @alwaystartco">Instagram</a></li><li><a href="#" data-demo="Facebook: AlwayStart">Facebook</a></li><li><a href="contact.html">Support</a></li></ul></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Clarity Development, LLC · 9415 Culver Blvd, Culver City, CA 90232 · 424.404.5840</span>
+      <span>Prototype for demonstration. Park&nbsp;&&nbsp;WalkAway™ and Drive More, Worry Less™ are trademarks of Clarity Development, LLC.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
