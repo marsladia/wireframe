@@ -258,16 +258,37 @@ const galleryVideos = [
   },
 ];
 
-const imagePerPage = 20;
-const videoPerPage = 4;
+const imagePerPage = 8;
+const videoPerPage = 2;
 let currentImagePage = 1;
 let currentVideoPage = 1;
 let activeLightboxType = "image";
 let activeLightboxIndex = 0;
 let currentImageItems = [];
+const imageExistenceCache = new Map();
 
 function getImagePath(fileName) {
   return "media/Gallery/" + encodeURIComponent(fileName);
+}
+
+function checkImageExists(fileName) {
+  const cached = imageExistenceCache.get(fileName);
+  if (cached !== undefined) {
+    return Promise.resolve(cached);
+  }
+
+  return new Promise((resolve) => {
+    const testImage = new Image();
+    testImage.onload = () => {
+      imageExistenceCache.set(fileName, true);
+      resolve(true);
+    };
+    testImage.onerror = () => {
+      imageExistenceCache.set(fileName, false);
+      resolve(false);
+    };
+    testImage.src = `${getImagePath(fileName)}?v=${Date.now()}`;
+  });
 }
 
 function createImageCard(fileName, index) {
@@ -449,24 +470,32 @@ function renderVideoPagination(totalPages) {
   });
 }
 
-function renderImageGallery() {
+async function renderImageGallery() {
   const grid = document.getElementById("image-gallery-grid");
   const count = document.getElementById("image-gallery-count");
 
   if (!grid || !count) return;
 
-  currentImageItems = galleryImages;
-  const totalPages = Math.ceil(galleryImages.length / imagePerPage);
+  const availableImages = [];
+  for (const fileName of galleryImages) {
+    const exists = await checkImageExists(fileName);
+    if (exists) {
+      availableImages.push(fileName);
+    }
+  }
+
+  currentImageItems = availableImages;
+  const totalPages = Math.ceil(availableImages.length / imagePerPage);
   const start = (currentImagePage - 1) * imagePerPage;
   const end = start + imagePerPage;
-  const pageItems = galleryImages.slice(start, end);
+  const pageItems = availableImages.slice(start, end);
 
   grid.innerHTML = "";
   pageItems.forEach((fileName, index) => {
     grid.appendChild(createImageCard(fileName, start + index));
   });
 
-  count.textContent = `Showing ${start + 1}-${Math.min(end, galleryImages.length)} of ${galleryImages.length} images`;
+  count.textContent = `Showing ${start + 1}-${Math.min(end, availableImages.length)} of ${availableImages.length} images`;
   renderImagePagination(totalPages);
   loadVisibleMedia();
 }
@@ -557,7 +586,7 @@ function changeLightbox(step) {
   const totalItems =
     activeLightboxType === "video"
       ? galleryVideos.length
-      : galleryImages.length;
+      : currentImageItems.length;
   if (nextIndex < 0 || nextIndex >= totalItems) return;
   openLightbox(activeLightboxType, nextIndex);
 }
