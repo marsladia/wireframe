@@ -220,7 +220,8 @@ header.nav{
 .compare h3{display:flex;align-items:center;gap:10px;margin-bottom:20px}
 .compare ul{list-style:none;display:flex;flex-direction:column;gap:14px}
 .compare li{display:flex;gap:12px;font-size:.98rem}
-.compare li svg{width:20px;height:20px;flex:none;margin-top:2px}
+.compare li svg{width:18px;height:18px;flex:none;margin-top:2px}
+.compare h3 svg{width:100px;height:100px;flex:none}
 .x{color:var(--steel)}.ck{color:var(--volt)}
 
 /* ---------- Steps ---------- */
