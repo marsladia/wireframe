@@ -258,7 +258,7 @@ const galleryVideos = [
   },
 ];
 
-const imagePerPage = 12;
+const imagePerPage = 20;
 const videoPerPage = 4;
 let currentImagePage = 1;
 let currentVideoPage = 1;
