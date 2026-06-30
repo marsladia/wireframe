@@ -7,18 +7,20 @@
 <meta name="description" content="Inside AlwayStart: a custom 1,200A solid-state switch, a 32-bit ARM adaptive algorithm, MIL-STD-810H and IP68 durability, and full compatibility details.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="assets/logo-mark.svg">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <header class="nav">
   <div class="container nav-inner">
-    <a href="index.html" class="brand"><span class="mark"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z" fill="#05140b"/></svg></span><span>AlwayStart<small>A Clarity Development Brand</small></span></a>
+    <a href="index.html" class="brand" aria-label="AlwayStart home"><img src="assets/logo-mark.svg" alt="" class="brand-mark"><span class="brand-word"><b>Alway</b><i>Start</i></span></a>
     <nav><ul class="nav-links">
       <li><a href="how-it-works.html">How It Works</a></li>
       <li><a href="technology.html" class="active">Technology</a></li>
       <li><a href="pricing.html">Pricing</a></li>
       <li><a href="about.html">About</a></li>
+      <li><a href="media.html">Gallery</a></li>
       <li><a href="faq.html">FAQ</a></li>
     </ul></nav>
     <div class="nav-cta">
@@ -74,6 +76,40 @@
       <div class="stat reveal"><b>200A</b><span>Continuous current</span></div>
       <div class="stat reveal"><b>&lt;1µA</b><span>UltraSleep draw</span></div>
       <div class="stat reveal"><b>250°F</b><span>Operating temperature</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="product-carousel-section">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Product visuals</span>
+      <h2>See the system from every angle.</h2>
+      <p class="lead">A quick rotating look at the AlwayStart unit in different product setups and environments.</p>
+    </div>
+
+    <div class="product-carousel reveal" id="product-carousel">
+      <div class="product-carousel-track">
+        <div class="product-slide active">
+          <img src="media/Product/AS%20grey%20bkgd.jpg" alt="AlwayStart unit on a grey background">
+        </div>
+
+        <div class="product-slide">
+          <img src="media/Product/AS%20grey%20bkgd3.jpg" alt="AlwayStart unit in a third grey background view">
+        </div>
+        <div class="product-slide">
+          <img src="media/Product/AS%20on%20white%20bkgd%20medium.jpg" alt="AlwayStart unit on a white background">
+        </div>
+        <div class="product-slide">
+          <img src="media/Product/AS%20on%20white%20whole%20shot.jpg" alt="Wide product shot of the AlwayStart system">
+        </div>
+      </div>
+      <div class="product-carousel-dots" aria-label="Carousel navigation">
+        <button type="button" class="active" data-slide="0" aria-label="Show image 1"></button>
+        <button type="button" data-slide="1" aria-label="Show image 2"></button>
+        <button type="button" data-slide="2" aria-label="Show image 3"></button>
+        <button type="button" data-slide="3" aria-label="Show image 4"></button>
+      </div>
     </div>
   </div>
 </section>
@@ -165,7 +201,7 @@
 <footer class="site">
   <div class="container">
     <div class="foot-grid">
-      <div><a href="index.html" class="brand"><span class="mark"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z" fill="#05140b"/></svg></span><span>AlwayStart</span></a><p class="foot-note">The world's first automatic battery protector. Park&nbsp;&&nbsp;WalkAway.™ A Clarity Development, LLC brand, engineered in Southern California.</p>
+      <div><a href="index.html" class="brand" aria-label="AlwayStart home"><img src="assets/logo-mark.svg" alt="" class="brand-mark foot-mark"><span class="brand-word"><b>Alway</b><i>Start</i></span></a><p class="foot-note">The world's first automatic battery protector. Park&nbsp;&&nbsp;WalkAway.™ A Clarity Development, LLC brand, engineered in Southern California.</p>
         <div class="foot-news">
           <form data-news>
             <input type="email" placeholder="Email for launch updates" aria-label="Email address" required>
@@ -184,6 +220,46 @@
   </div>
 </footer>
 
+<script>
+  const productCarousel = document.getElementById('product-carousel');
+
+  if (productCarousel) {
+    const slides = Array.from(productCarousel.querySelectorAll('.product-slide'));
+    const dots = Array.from(productCarousel.querySelectorAll('.product-carousel-dots button'));
+    let currentIndex = 0;
+    let autoplayId;
+
+    function showSlide(index) {
+      currentIndex = (index + slides.length) % slides.length;
+      slides.forEach((slide, slideIndex) => {
+        slide.classList.toggle('active', slideIndex === currentIndex);
+      });
+      dots.forEach((dot, dotIndex) => {
+        dot.classList.toggle('active', dotIndex === currentIndex);
+      });
+    }
+
+    function startAutoplay() {
+      clearInterval(autoplayId);
+      autoplayId = window.setInterval(() => {
+        showSlide(currentIndex + 1);
+      }, 5000);
+    }
+
+    dots.forEach((dot) => {
+      dot.addEventListener('click', () => {
+        showSlide(Number(dot.dataset.slide));
+        startAutoplay();
+      });
+    });
+
+    productCarousel.addEventListener('mouseenter', () => clearInterval(autoplayId));
+    productCarousel.addEventListener('mouseleave', startAutoplay);
+
+    showSlide(0);
+    startAutoplay();
+  }
+</script>
 <script src="script.js"></script>
 </body>
 </html>

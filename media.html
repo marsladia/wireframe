@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery — AlwayStart</title>
+<meta name="description" content="Browse AlwayStart product images and videos in a polished gallery featuring installation visuals and product walkthrough clips.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="icon" type="image/svg+xml" href="assets/logo-mark.svg">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="brand" aria-label="AlwayStart home"><img src="assets/logo-mark.svg" alt="" class="brand-mark"><span class="brand-word"><b>Alway</b><i>Start</i></span></a>
+    <nav><ul class="nav-links">
+      <li><a href="how-it-works.html">How It Works</a></li>
+      <li><a href="technology.html">Technology</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="media.html" class="active">Gallery</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+    </ul></nav>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn-ghost">Contact</a>
+      <a href="pricing.html" class="btn btn-primary">Reserve Yours</a>
+      <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<section class="pagehero">
+  <div class="container">
+    <div class="crumb"><a href="index.html">Home</a> / Media</div>
+    <span class="eyebrow">Image & video gallery</span>
+    <h1>Browse the AlwayStart gallery.</h1>
+    <p class="lead" style="margin-top:20px">A polished gallery for product visuals, installation imagery, and walkthrough clips that tell the AlwayStart story.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Featured gallery</span>
+      <h2>See the product in motion.</h2>
+      <p class="lead">This gallery highlights the current collection of product visuals, including an overview video, a 3D walkthrough, and installation imagery.</p>
+    </div>
+
+    <div class="gallery-section reveal">
+      <div class="section-head" style="margin-bottom:18px;padding:0;">
+        <span class="eyebrow">Images</span>
+        <h3>Installation and product imagery</h3>
+        <p class="lead">Browse the latest still visuals from the AlwayStart installation experience.</p>
+      </div>
+      <div class="gallery-toolbar">
+        <p id="image-gallery-count" class="gallery-count">Loading images…</p>
+      </div>
+      <div id="image-gallery-grid" class="gallery-grid"></div>
+      <div id="image-gallery-pagination" class="gallery-pagination"></div>
+    </div>
+
+    <div class="gallery-section reveal" style="margin-top:36px;">
+      <div class="section-head" style="margin-bottom:18px;padding:0;">
+        <span class="eyebrow">Videos</span>
+        <h3>Watch the product in motion</h3>
+        <p class="lead">Explore walkthroughs and overview clips that show how the system works.</p>
+      </div>
+      <div class="gallery-toolbar">
+        <p id="video-gallery-count" class="gallery-count">Loading videos…</p>
+      </div>
+      <div id="video-gallery-grid" class="gallery-grid"></div>
+      <div id="video-gallery-pagination" class="gallery-pagination"></div>
+    </div>
+
+    <div id="gallery-lightbox" class="gallery-lightbox" aria-hidden="true">
+      <button id="gallery-lightbox-close" class="gallery-lightbox-close" aria-label="Close image">×</button>
+      <button id="gallery-lightbox-prev" class="gallery-lightbox-nav prev" aria-label="Previous image">←</button>
+      <div class="gallery-lightbox-stage">
+        <div id="gallery-lightbox-media" class="gallery-lightbox-media"></div>
+        <div id="gallery-lightbox-title" class="gallery-lightbox-title"></div>
+      </div>
+      <button id="gallery-lightbox-next" class="gallery-lightbox-nav next" aria-label="Next image">→</button>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Next step</span>
+      <h2>Want more gallery content?</h2>
+      <p class="lead">This gallery is ready for expansion as new product shots, demo clips, and installation assets are added.</p>
+    </div>
+    <div class="btns reveal">
+      <a href="index.html" class="btn btn-ghost">Back to home</a>
+      <a href="how-it-works.html" class="btn btn-primary">See how it works</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <a href="index.html" class="brand" aria-label="AlwayStart home"><img src="assets/logo-mark.svg" alt="" class="brand-mark foot-mark"><span class="brand-word"><b>Alway</b><i>Start</i></span></a>
+        <p class="foot-note">The world's first automatic battery protector. Park&nbsp;&&nbsp;WalkAway.™ A Clarity Development, LLC brand, engineered in Southern California.</p>
+      </div>
+      <div><h4>Product</h4><ul><li><a href="how-it-works.html">How It Works</a></li><li><a href="technology.html">Technology</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="faq.html">FAQ</a></li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><h4>Connect</h4><ul><li><a href="media.html">Media</a></li><li><a href="pricing.html">Reserve</a></li></ul></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Clarity Development, LLC · 9415 Culver Blvd, Culver City, CA 90232 · 424.404.5840</span>
+      <span>Prototype for demonstration.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="gallery.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

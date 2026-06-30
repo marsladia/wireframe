@@ -6,7 +6,7 @@
 <title>AlwayStart — The World's First Automatic Battery Protector</title>
 <meta name="description" content="AlwayStart preserves enough of your 12V battery's power so your vehicle is always ready to start. Install once, then Park & WalkAway. Zero maintenance, zero anxiety.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="assets/logo-mark.svg">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -14,16 +14,14 @@
 <!-- NAV -->
 <header class="nav">
   <div class="container nav-inner">
-    <a href="index.html" class="brand">
-      <span class="mark"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z" fill="#05140b"/></svg></span>
-      <span>AlwayStart<small>A Clarity Development Brand</small></span>
-    </a>
+    <a href="index.html" class="brand" aria-label="AlwayStart home"><img src="assets/logo-mark.svg" alt="" class="brand-mark"><span class="brand-word"><b>Alway</b><i>Start</i></span></a>
     <nav>
       <ul class="nav-links">
         <li><a href="how-it-works.html">How It Works</a></li>
         <li><a href="technology.html">Technology</a></li>
         <li><a href="pricing.html">Pricing</a></li>
         <li><a href="about.html">About</a></li>
+        <li><a href="media.html">Gallery</a></li>
         <li><a href="faq.html">FAQ</a></li>
       </ul>
     </nav>
@@ -53,57 +51,16 @@
         <div><b>2×</b>battery lifespan</div>
       </div>
     </div>
-    <div class="slider reveal" id="heroSlider" aria-roledescription="carousel" aria-label="AlwayStart highlights">
-      <div class="slide-progress" id="slideProgress"></div>
-      <div class="slides">
-
-        <div class="slide s1 active">
-          <div class="slide-inner">
-            <div class="device-unit">
-              <div class="logo">ALWAYSTART</div>
-              <div class="leds"><span class="led on-g"></span><span class="led on-b"></span><span class="led"></span></div>
-              <span class="term l"></span><span class="term r"></span>
-            </div>
-            <span class="kicker">● Live · Protecting</span>
-            <h3>Always watching your start reserve</h3>
-            <p>Solid-state monitoring, 24/7, with zero cords.</p>
-          </div>
-        </div>
-
-        <div class="slide s2">
-          <div class="slide-inner">
-            <div class="device-unit">
-              <div class="logo">ALWAYSTART</div>
-              <div class="leds"><span class="led on-g"></span><span class="led"></span><span class="led on-b"></span></div>
-              <span class="term l"></span><span class="term r"></span>
-            </div>
-            <span class="kicker">● Isolated · Reserve Safe</span>
-            <h3>Parked for months? Still starts.</h3>
-            <p>It isolates before parasitic drain can strand you.</p>
-          </div>
-        </div>
-
-        <div class="slide s3">
-          <div class="slide-inner">
-            <div class="big">1,200A<small>Solid-state peak · 200A continuous</small></div>
-            <span class="kicker">Engineered for extremes</span>
-            <h3>Headroom for winches, audio &amp; big builds</h3>
-          </div>
-        </div>
-
-        <div class="slide s4">
-          <div class="slide-inner">
-            <div class="big">11,000+<small>Hours endurance tested · 450+ days in the field</small></div>
-            <span class="kicker">Proven, not promised</span>
-            <h3>From Utah cold to Palm Springs heat</h3>
-          </div>
-        </div>
-
+    <div class="hero-media reveal">
+      <span class="hero-badge">● PRODUCT FILM</span>
+      <video class="hero-video" autoplay muted loop playsinline preload="auto">
+        <source src="media/alwaystart-how-it-works-3d.mp4" type="video/mp4">
+      </video>
+      <div class="media-fallback">
+        <img src="assets/logo-mark.svg" alt="">
+        <b>AlwayStart in action</b>
+        <span>Automatic Battery Protector</span>
       </div>
-
-      <button class="slide-arrow prev" id="slidePrev" aria-label="Previous slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M15 18l-6-6 6-6"/></svg></button>
-      <button class="slide-arrow next" id="slideNext" aria-label="Next slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 6l6 6-6 6"/></svg></button>
-      <div class="slide-dots" id="slideDots"></div>
     </div>
   </div>
 </section>
@@ -184,6 +141,48 @@
     <div class="section-head reveal">
       <span class="eyebrow">How it works</span>
       <h2>Install once. Then forget it's there.</h2>
+    </div>
+    <div class="video-embed reveal" style="margin-bottom:40px; position:relative;">
+      <video controls playsinline preload="metadata" poster="assets/AS installed BMW2.jpg">
+        <source src="media/alwaystart-overview.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div aria-hidden="true" style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; pointer-events:none;">
+        <div style="width:76px;height:76px;border-radius:50%;background:rgba(8,12,24,.72);display:flex;align-items:center;justify-content:center;box-shadow:0 12px 36px rgba(0,0,0,.28);backdrop-filter:blur(6px);">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="32" height="32" style="margin-left:4px; color:#fff">
+            <path d="M8 6.5v11l9-5.5-9-5.5Z"/>
+          </svg>
+        </div>
+      </div>
+      <div class="media-fallback">
+        <img src="assets/logo-mark.svg" alt="AlwayStart logo">
+        <b>How AlwayStart works — 3D</b>
+        <span>Inside the automatic battery protector</span>
+      </div>
+  
+
+    <!-- Duplicate of the above video for inclusion on how-it-works page
+         (template can be copied into how-it-works.html or injected via JS) -->
+    <template id="how-it-works-video">
+      <div class="video-embed reveal" style="margin-bottom:40px; position:relative;">
+        <video controls playsinline preload="metadata" poster="assets/AS installed BMW2.jpg">
+          <source src="media/alwaystart-how-it-works-3d.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div aria-hidden="true" style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; pointer-events:none;">
+          <div style="width:76px;height:76px;border-radius:50%;background:rgba(8,12,24,.72);display:flex;align-items:center;justify-content:center;box-shadow:0 12px 36px rgba(0,0,0,.28);backdrop-filter:blur(6px);">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="32" height="32" style="margin-left:4px; color:#fff">
+              <path d="M8 6.5v11l9-5.5-9-5.5Z"/>
+            </svg>
+          </div>
+        </div>
+        <div class="media-fallback">
+          <img src="assets/logo-mark.svg" alt="AlwayStart logo">
+          <b>How AlwayStart works — 3D</b>
+          <span>Inside the automatic battery protector</span>
+        </div>
+      </div>
+    </template>
     </div>
     <div class="steps">
       <div class="step reveal"><span class="num"></span><div><h3>Install in minutes</h3><p>One-time setup, no special tools. Rotate the battery 180°, mount with the integrated bracket, and connect the terminals.</p></div></div>
@@ -387,7 +386,7 @@
   <div class="container">
     <div class="foot-grid">
       <div>
-        <a href="index.html" class="brand"><span class="mark"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z" fill="#05140b"/></svg></span><span>AlwayStart</span></a>
+        <a href="index.html" class="brand" aria-label="AlwayStart home"><img src="assets/logo-mark.svg" alt="" class="brand-mark foot-mark"><span class="brand-word"><b>Alway</b><i>Start</i></span></a>
         <p class="foot-note">The world's first automatic battery protector. Park&nbsp;&&nbsp;WalkAway.™ A Clarity Development, LLC brand, engineered in Southern California.</p>
         <div class="foot-news">
           <form data-news>
