@@ -271,43 +271,57 @@ function getImagePath(fileName) {
   return "media/Gallery/" + encodeURIComponent(fileName);
 }
 
-function checkImageExists(fileName) {
+function resolveImagePath(fileName) {
   const cached = imageExistenceCache.get(fileName);
   if (cached !== undefined) {
     return Promise.resolve(cached);
   }
 
+  const baseName = fileName.replace(/\.(jpe?g|png|webp)$/i, "");
+  const candidates = [".webp", ".jpg", ".jpeg", ".png"].map(
+    (ext) => `${baseName}${ext}`,
+  );
+
   return new Promise((resolve) => {
-    const testImage = new Image();
-    testImage.onload = () => {
-      imageExistenceCache.set(fileName, true);
-      resolve(true);
+    const tryNext = (index) => {
+      if (index >= candidates.length) {
+        imageExistenceCache.set(fileName, null);
+        resolve(null);
+        return;
+      }
+
+      const candidate = candidates[index];
+      const testImage = new Image();
+      testImage.onload = () => {
+        imageExistenceCache.set(fileName, getImagePath(candidate));
+        resolve(getImagePath(candidate));
+      };
+      testImage.onerror = () => tryNext(index + 1);
+      testImage.src = `${getImagePath(candidate)}?v=${Date.now()}`;
     };
-    testImage.onerror = () => {
-      imageExistenceCache.set(fileName, false);
-      resolve(false);
-    };
-    testImage.src = `${getImagePath(fileName)}?v=${Date.now()}`;
+
+    tryNext(0);
   });
 }
 
-function createImageCard(fileName, index) {
+function createImageCard(item, index) {
   const card = document.createElement("article");
   card.className = "gallery-card";
   card.addEventListener("click", () => openLightbox("image", index));
 
   const img = document.createElement("img");
-  img.alt = fileName.replace(/\.(jpe?g|png|webp)$/i, "").replace(/_/g, " ");
+  const displayName = item.fileName
+    .replace(/\.(jpe?g|png|webp)$/i, "")
+    .replace(/_/g, " ");
+  img.alt = displayName;
   img.loading = "lazy";
   img.decoding = "async";
-  img.dataset.src = getImagePath(fileName);
+  img.dataset.src = item.src;
   card.appendChild(img);
 
   const caption = document.createElement("div");
   caption.className = "gallery-caption";
-  caption.textContent = fileName
-    .replace(/\.(jpe?g|png|webp)$/i, "")
-    .replace(/_/g, " ");
+  caption.textContent = displayName;
 
   card.appendChild(caption);
   return card;
@@ -478,9 +492,9 @@ async function renderImageGallery() {
 
   const availableImages = [];
   for (const fileName of galleryImages) {
-    const exists = await checkImageExists(fileName);
-    if (exists) {
-      availableImages.push(fileName);
+    const resolvedSrc = await resolveImagePath(fileName);
+    if (resolvedSrc) {
+      availableImages.push({ fileName, src: resolvedSrc });
     }
   }
 
@@ -491,8 +505,8 @@ async function renderImageGallery() {
   const pageItems = availableImages.slice(start, end);
 
   grid.innerHTML = "";
-  pageItems.forEach((fileName, index) => {
-    grid.appendChild(createImageCard(fileName, start + index));
+  pageItems.forEach((item, index) => {
+    grid.appendChild(createImageCard(item, start + index));
   });
 
   count.textContent = `Showing ${start + 1}-${Math.min(end, availableImages.length)} of ${availableImages.length} images`;
@@ -550,12 +564,14 @@ function openLightbox(type, index) {
     media.appendChild(video);
     title.textContent = item.title;
   } else {
-    const fileName = currentImageItems[index];
-    if (!fileName) return;
+    const item = currentImageItems[index];
+    if (!item) return;
 
     const img = document.createElement("img");
-    img.src = getImagePath(fileName);
-    img.alt = fileName.replace(/\.(jpe?g|png|webp)$/i, "").replace(/_/g, " ");
+    img.src = item.src;
+    img.alt = item.fileName
+      .replace(/\.(jpe?g|png|webp)$/i, "")
+      .replace(/_/g, " ");
     media.appendChild(img);
     title.textContent = img.alt;
   }
