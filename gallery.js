@@ -1,248 +1,36 @@
 const galleryImages = [
-  "1959 Chevrolet Corvette1.jpg",
-  "1959 Chevrolet Corvette2.jpg",
-  "1968 Ford Mustang install button push.jpg",
-  "1968 Ford Mustang install front.jpg",
-  "1982 Rolls-Royce Corniche interior.jpg",
-  "1982 Rolls-Royce Corniche1.jpg",
-  "1982 Rolls-Royce Corniche2.jpg",
-  "4runner install1.jpg",
-  "4runner install2.jpg",
-  "accessories ALWAYSTART_STILL_23.jpg",
-  "Accessories plug in.png",
-  "Annoying dead battery at night.jpg",
-  "AS BMW install1.jpg",
-  "AS BMW install2.jpg",
-  "AS BMW install3.jpg",
-  "AS BMW install4.jpg",
-  "AS BMW install5.jpg",
-  "AS BMW install6.jpg",
-  "AS grey bkgd.jpg",
-  "AS grey bkgd2.jpg",
-  "AS grey bkgd3.jpg",
-  "AS installed BMW close2.jpg",
-  "AS installed BMW closeup.jpg",
-  "AS installed BMW.jpg",
-  "AS installed BMW2.jpg",
-  "AS installed BMW3.jpg",
-  "AS installed close.jpg",
-  "AS installed jeep night button push.jpg",
-  "AS installed jeep night.jpg",
-  "AS jeep install press button.jpg",
-  "AS on battery in corvette logo.jpg",
-  "AS on battery in front of C8 Corvette.jpg",
-  "AS on battery in front of C8 Corvette2.jpg",
-  "AS on battery in front of C8 Corvette3.jpg",
-  "AS on battery in front of C8.jpg",
-  "AS on battery in front of classic cars.jpg",
-  "AS on battery in front of Roylce.jpg",
-  "AS on battery in front of shop floor.jpg",
-  "AS on battery next to jackstand.jpg",
-  "AS on battery next to jackstand2.jpg",
-  "AS on battery next to Rolls Royce.jpg",
-  "AS on battery on cart1.jpg",
-  "AS on battery on cart2.jpg",
-  "AS on battery on cart3.jpg",
-  "AS on battery red cart.jpg",
-  "AS on gravel.jpg",
-  "AS on grey.jpg",
-  "AS on grey2.jpg",
-  "AS on grey3.jpg",
-  "AS on grey4.jpg",
-  "AS on leather seat in C8.jpg",
-  "AS on white background top & side mounts.jpg",
-  "AS on white bkgd medium.jpg",
-  "AS on white bkgd side mount only.jpg",
-  "AS on white bkgd side mount.jpg",
-  "AS on white whole shot.jpg",
-  "AS on white1.jpg",
-  "AS on white2.jpg",
-  "AS studio left and right units white(1).jpg",
-  "AS studio left and right units white.jpg",
-  "AS what_s in the box.jpg",
-  "AS white center black edge.png",
-  "AS white closer.jpg",
-  "AS white full.jpg",
-  "AS white slanted.jpg",
-  "BeautyPlus_20260419165210166_save.jpg",
-  "C8 corvette install beach.png",
-  "C8 Corvette install body.jpg",
-  "C8 Corvette install button push.jpg",
-  "C8 Corvette install circle.jpg",
-  "C8 Corvette install hood.jpg",
-  "C8 Corvette install interior(1).jpg",
-  "C8 Corvette install interior.jpg",
-  "C8 Corvette install.jpg",
-  "C8 Corvette install1.jpg",
-  "C8 Corvette install2(1).jpg",
-  "C8 Corvette install2.jpg",
-  "C8 Corvette install3.jpg",
-  "C8 Corvette install4.jpg",
-  "C8 Corvette install5.jpg",
-  "car build install circle.jpg",
-  "Car collector no windows in background.jpg",
-  "charger ALWAYSTART_STILL_08.jpg",
-  "classic bmw install driving frontal.jpg",
-  "classic bmw install driving.jpg",
-  "classic bmw install driving2.jpg",
-  "classic bmw install exhaust.jpg",
-  "classic bmw install ext.jpg",
-  "classic bmw install ext2.jpg",
-  "classic bmw install ext3.jpg",
-  "classic bmw install sunday drive.jpg",
-  "classic bmw install trunk close.jpg",
-  "classic bmw install walkby.jpg",
-  "Classic BMW install wheel.jpg",
-  "classic bmw interor.jpg",
-  "classic bmw interor2.jpg",
-  "classic bmw interor3.jpg",
-  "classic bmw interor4.jpg",
-  "classic bwm install driveway.jpg",
-  "Classic car collection.jpg",
-  "Classic car collection2.jpg",
-  "Classic car collection3.jpg",
-  "Classic car collection4.jpg",
-  "Classic car collection5.jpg",
-  "desert sunset.jpg",
-  "desert sunset2(1).jpg",
-  "Desert sunset2.jpg",
-  "desert.jpg",
-  "Desert3.jpg",
-  "Diesel truck install button push.jpg",
-  "Diesel truck install.jpg",
-  "Don_t need these three products anymore.jpg",
-  "Everyday driver2.png",
-  "firefighter overlander 4runner install.jpg",
-  "Ford Diesel F350 Install.jpg",
-  "Ford Diesel Truck Dual Battery install.jpg",
-  "Ford Diesel Truck Dual Battery install2.jpg",
-  "Ford truck install circle.jpg",
-  "Ford truck install hood down.jpg",
-  "Ford350 Truck install dual-AlwayStarts.jpg",
-  "Ford350 Truck install1.jpg",
-  "Ford350 Truck install2.jpg",
-  "Ford350 Truck install3.jpg",
-  "Ford350 Truck install4.jpg",
-  "Honda S2000 hood up.jpg",
-  "honda S2000 install circle.jpg",
-  "Honda S2000 install.jpg",
-  "Honda S2000 install2.jpg",
-  "Honda S2000 install3.jpg",
-  "Honda S2000 install4.jpg",
-  "Honda S2000 install5.jpg",
-  "Honda S2000 install6.jpg",
-  "Honda S2000 installed.jpg",
-  "Honda S2000 man installing.jpg",
-  "Honda S2000 man installing2(1).jpg",
-  "Honda S2000 man installing2.jpg",
-  "Honda S2000 man installing3.jpg",
-  "Honda S2000 man installing4.jpg",
-  "Jaguar E-type install - fastest car back then.jpg",
-  "Jaguar E-Type install - interior.jpg",
-  "Jaguar E-Type install - interior2.jpg",
-  "Jaguar E-type install circle - fastest car back then.jpg",
-  "Jaguar E-type install1.jpg",
-  "Jaguar E-type install10.jpg",
-  "Jaguar E-type install2.jpg",
-  "Jaguar E-type install3.jpg",
-  "Jaguar E-type install4.jpg",
-  "Jaguar E-type install5.jpg",
-  "Jaguar E-type install6.jpg",
-  "Jaguar E-type install7.jpg",
-  "Jaguar E-type install8.jpg",
-  "Jaguar E-type install9.jpg",
-  "jump pack ALWAYSTART_STILL_07.jpg",
-  "Lexus IS install circle.jpg",
-  "Lexus IS install.jpg",
-  "Lexus IS install2.jpg",
-  "Lexus IS install3.jpg",
-  "Luggage (1024 x 588 px).png",
-  "Mustang install city bkgd.jpeg",
-  "Mustang install city bkgd2.jpeg",
-  "Mustang install guy working.jpg",
-  "Mustang install under hood.jpg",
-  "Mustang install under hood2.jpg",
-  "Mustang install under hood3.jpg",
-  "Mustang install wrench in hand.jpg",
-  "Nissan 350Z install on build car.jpg",
-  "Nissan 350Z install on build car10.jpg",
-  "Nissan 350Z install on build car2.jpg",
-  "Nissan 350Z install on build car3.jpg",
-  "Nissan 350Z install on build car4.jpg",
-  "Nissan 350Z install on build car5.jpg",
-  "Nissan 350Z install on build car6.jpg",
-  "Nissan 350Z install on build car7.jpg",
-  "Nissan 350Z install on build car8.jpg",
-  "Nissan 350Z install on build car9.jpg",
-  "Overland Accessories.png",
-  "Overland ALWAYSTART_STILL_04.jpg",
-  "overland Jeep checking battery.jpg",
-  "Overlander forest view.jpg",
-  "overlander Jeep checking car.jpg",
-  "overlander Jeep checking under hood.jpg",
-  "overlander Jeep install camping site.jpg",
-  "overlander Jeep install camping site2.jpg",
-  "overlander Jeep install enjoy drive.jpg",
-  "overlander Jeep install enjoying camping site.jpg",
-  "overlander Jeep install enjoying camping.jpg",
-  "overlander Jeep install enjoying camping2.jpg",
-  "overlander Jeep install enjoying sunset.jpg",
-  "overlander jeep install enjoying sunset2.jpg",
-  "overlander Jeep install enjoying sunset3.jpg",
-  "overlander jeep install night enjoying accessories.jpg",
-  "overlander jeep install night enjoying accessories2.jpg",
-  "overlander Jeep install parked.jpg",
-  "overlander Jeep install parked2.jpg",
-  "overlander Jeep install running lights.jpg",
-  "overlander Jeep problem.jpg",
-  "Overlander Overlander Toyota FJ Cruiser install far front.jpg",
-  "Overlander smiling because of AlwayStart.jpg",
-  "overlander Toyota 4Runner install circle (1).jpg",
-  "Overlander Toyota 4Runner install circle.jpg",
-  "Overlander Toyota 4Runner install circlev4.jpg",
-  "Overlander Toyota 4Runner install circlev5.jpg",
-  "Overlander Toyota 4Runner install full.jpg",
-  "Overlander Toyota 4Runner install man.jpg",
-  "Overlander Toyota 4Runner install man2.jpg",
-  "Overlander Toyota 4Runner install out.jpg",
-  "Overlander Toyota 4Runner install out2.jpg",
-  "Overlander Toyota 4Runner install.jpg",
-  "Overlander Toyota 4Runner install2.jpg",
-  "Overlander Toyota 4Runner install3.jpg",
-  "Overlander Toyota 4Runner install4.jpg",
-  "Overlander Toyota 4Runner install5.jpg",
-  "Overlander Toyota 4Runner install6.jpg",
-  "Overlander Toyota 4Runner install7.jpg",
-  "Overlander Toyota 4Runner install8.jpg",
-  "Overlander Toyota 4Runner install9.jpg",
-  "Overlander Toyota FJ Cruiser install circle.jpg",
-  "Overlander Toyota FJ Cruiser install close up.jpg",
-  "Overlander Toyota FJ Cruiser install front 2.jpg",
-  "Overlander Toyota FJ Cruiser install front1.jpg",
-  "Overlander Toyota FJ Cruiser install full side.jpg",
-  "Overlander Toyota FJ Cruiser install whole car.jpg",
-  "Overlander Toyota FJ Cruiser install3.jpg",
-  "Overlander Toyota FJ Cruiser install4.jpg",
-  "Overlander Toyota FJ Cruister install circle.jpg",
-  "RV install full under hood.jpg",
-  "RV install pressing button.jpg",
-  "RV install1.jpg",
-  "RV install2.jpg",
-  "RV install3.jpg",
-  "RV install replacing battery.jpg",
-  "tangledcables wide.jpg",
-  "tangledcables.jpg",
-  "Toyota Sequoia + Lexus IS installs.jpg",
-  "Toyota Sequoia + Lexus IS installs2.jpg",
-  "Toyota Sequoia install.jpg",
-  "Toyotal Sequoia install2.jpg",
-  "Toyotal Sequoia install3.jpg",
-  "Toyotal Sequoia install4.jpg",
-  "Truck install brick wall bkgd.jpg",
-  "Truck install circle.jpg",
-  "Truck install closer brick wall bkgd.jpeg",
-  "Truck install no circle.jpg",
-  "Twisted cablesr1.png",
+  "Jaguar E-type install - fastest car back then.webp",
+  "Jaguar E-Type install - interior.webp",
+  "Jaguar E-Type install - interior2.webp",
+  "Jaguar E-type install circle - fastest car back then.webp",
+  "Jaguar E-type install1.webp",
+  "Jaguar E-type install10.webp",
+  "jump pack ALWAYSTART_STILL_07.webp",
+  "Lexus IS install circle.webp",
+  "Lexus IS install.webp",
+  "Lexus IS install2.webp",
+  "Lexus IS install3.webp",
+  "Luggage (1024 x 588 px).webp",
+  "Mustang install city bkgd.webp",
+  "Mustang install city bkgd2.webp",
+  "Mustang install guy working.webp",
+  "Mustang install under hood.webp",
+  "Mustang install under hood2.webp",
+  "Mustang install under hood3.webp",
+  "Nissan 350Z install on build car.webp",
+  "Overland Accessories.webp",
+  "Overland ALWAYSTART_STILL_04.webp",
+  "overland Jeep checking battery.webp",
+  "overlander Jeep install camping site.webp",
+  "overlander Jeep install enjoying sunset.webp",
+  "Overlander Toyota 4Runner install circle.webp",
+  "Overlander Toyota 4Runner install full.webp",
+  "Overlander smiling because of AlwayStart.webp",
+  "RV install1.webp",
+  "RV install2.webp",
+  "RV install3.webp",
+  "Truck install closer brick wall bkgd.webp",
+  "Twisted cablesr1.webp",
 ];
 
 const galleryVideos = [
@@ -260,13 +48,12 @@ const galleryVideos = [
 
 const imagePerPage = 8;
 const videoPerPage = 2;
-const initialImageBatch = 8;
 let currentImagePage = 1;
 let currentVideoPage = 1;
 let activeLightboxType = "image";
 let activeLightboxIndex = 0;
 let currentImageItems = [];
-let allImageItems = [];
+const imagePageCache = new Map();
 const imageExistenceCache = new Map();
 
 function getImagePath(fileName) {
@@ -279,31 +66,9 @@ function resolveImagePath(fileName) {
     return Promise.resolve(cached);
   }
 
-  const baseName = fileName.replace(/\.(jpe?g|png|webp)$/i, "");
-  const candidates = [".webp", ".jpg", ".jpeg", ".png"].map(
-    (ext) => `${baseName}${ext}`,
-  );
-
-  return new Promise((resolve) => {
-    const tryNext = (index) => {
-      if (index >= candidates.length) {
-        imageExistenceCache.set(fileName, null);
-        resolve(null);
-        return;
-      }
-
-      const candidate = candidates[index];
-      const testImage = new Image();
-      testImage.onload = () => {
-        imageExistenceCache.set(fileName, getImagePath(candidate));
-        resolve(getImagePath(candidate));
-      };
-      testImage.onerror = () => tryNext(index + 1);
-      testImage.src = `${getImagePath(candidate)}?v=${Date.now()}`;
-    };
-
-    tryNext(0);
-  });
+  const resolvedPath = getImagePath(fileName);
+  imageExistenceCache.set(fileName, resolvedPath);
+  return Promise.resolve(resolvedPath);
 }
 
 function createImageCard(item, index) {
@@ -486,35 +251,45 @@ function renderVideoPagination(totalPages) {
   });
 }
 
+async function getImagePageItems(pageNumber) {
+  if (imagePageCache.has(pageNumber)) {
+    return imagePageCache.get(pageNumber);
+  }
+
+  const start = (pageNumber - 1) * imagePerPage;
+  const end = start + imagePerPage;
+  const pageFiles = galleryImages.slice(start, end);
+  const items = [];
+
+  for (const fileName of pageFiles) {
+    const resolvedSrc = await resolveImagePath(fileName);
+    if (resolvedSrc) {
+      items.push({ fileName, src: resolvedSrc });
+    }
+  }
+
+  imagePageCache.set(pageNumber, items);
+  return items;
+}
+
 async function renderImageGallery() {
   const grid = document.getElementById("image-gallery-grid");
   const count = document.getElementById("image-gallery-count");
 
   if (!grid || !count) return;
 
-  if (!allImageItems.length) {
-    const availableImages = [];
-    for (const fileName of galleryImages) {
-      const resolvedSrc = await resolveImagePath(fileName);
-      if (resolvedSrc) {
-        availableImages.push({ fileName, src: resolvedSrc });
-      }
-    }
-    allImageItems = availableImages;
-  }
-
-  currentImageItems = allImageItems.slice(0, initialImageBatch);
-  const totalPages = Math.ceil(allImageItems.length / imagePerPage);
+  const totalPages = Math.ceil(galleryImages.length / imagePerPage);
   const start = (currentImagePage - 1) * imagePerPage;
   const end = start + imagePerPage;
-  const pageItems = allImageItems.slice(start, end);
+  const pageItems = await getImagePageItems(currentImagePage);
 
+  currentImageItems = pageItems;
   grid.innerHTML = "";
   pageItems.forEach((item, index) => {
     grid.appendChild(createImageCard(item, start + index));
   });
 
-  count.textContent = `Showing ${start + 1}-${Math.min(end, allImageItems.length)} of ${allImageItems.length} images`;
+  count.textContent = `Showing ${start + 1}-${Math.min(end, galleryImages.length)} of ${galleryImages.length} images`;
   renderImagePagination(totalPages);
   loadVisibleMedia();
 }
