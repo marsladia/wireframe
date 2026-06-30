@@ -258,8 +258,8 @@ const galleryVideos = [
   },
 ];
 
-const imagePerPage = 24;
-const videoPerPage = 8;
+const imagePerPage = 12;
+const videoPerPage = 4;
 let currentImagePage = 1;
 let currentVideoPage = 1;
 let activeLightboxType = "image";
@@ -276,10 +276,10 @@ function createImageCard(fileName, index) {
   card.addEventListener("click", () => openLightbox("image", index));
 
   const img = document.createElement("img");
-  img.src = getImagePath(fileName);
   img.alt = fileName.replace(/\.(jpe?g|png|webp)$/i, "").replace(/_/g, " ");
   img.loading = "lazy";
   img.decoding = "async";
+  img.dataset.src = getImagePath(fileName);
   card.appendChild(img);
 
   const caption = document.createElement("div");
@@ -298,10 +298,10 @@ function createVideoCard(item, index) {
   card.addEventListener("click", () => openLightbox("video", index));
 
   const preview = document.createElement("img");
-  preview.src = item.poster;
   preview.alt = item.title;
   preview.loading = "lazy";
   preview.decoding = "async";
+  preview.dataset.src = item.poster;
 
   card.appendChild(preview);
 
@@ -311,6 +311,40 @@ function createVideoCard(item, index) {
 
   card.appendChild(caption);
   return card;
+}
+
+function loadVisibleMedia() {
+  const imageGrid = document.getElementById("image-gallery-grid");
+  const videoGrid = document.getElementById("video-gallery-grid");
+
+  const activateMedia = (element) => {
+    if (!element || !element.dataset.src) return;
+    element.src = element.dataset.src;
+    delete element.dataset.src;
+  };
+
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          activateMedia(entry.target);
+          obs.unobserve(entry.target);
+        });
+      },
+      { rootMargin: "200px 0px" },
+    );
+
+    imageGrid
+      ?.querySelectorAll("img[data-src]")
+      .forEach((img) => observer.observe(img));
+    videoGrid
+      ?.querySelectorAll("img[data-src]")
+      .forEach((img) => observer.observe(img));
+  } else {
+    imageGrid?.querySelectorAll("img[data-src]").forEach(activateMedia);
+    videoGrid?.querySelectorAll("img[data-src]").forEach(activateMedia);
+  }
 }
 
 function renderImagePagination(totalPages) {
@@ -415,42 +449,26 @@ function renderVideoPagination(totalPages) {
   });
 }
 
-async function checkImageExists(fileName) {
-  return new Promise((resolve) => {
-    const testImage = new Image();
-    testImage.onload = () => resolve(true);
-    testImage.onerror = () => resolve(false);
-    testImage.src = getImagePath(fileName);
-  });
-}
-
-async function renderImageGallery() {
+function renderImageGallery() {
   const grid = document.getElementById("image-gallery-grid");
   const count = document.getElementById("image-gallery-count");
 
   if (!grid || !count) return;
 
-  const availableImages = [];
-  for (const fileName of galleryImages) {
-    const exists = await checkImageExists(fileName);
-    if (exists) {
-      availableImages.push(fileName);
-    }
-  }
-
-  currentImageItems = availableImages;
-  const totalPages = Math.ceil(availableImages.length / imagePerPage);
+  currentImageItems = galleryImages;
+  const totalPages = Math.ceil(galleryImages.length / imagePerPage);
   const start = (currentImagePage - 1) * imagePerPage;
   const end = start + imagePerPage;
-  const pageItems = availableImages.slice(start, end);
+  const pageItems = galleryImages.slice(start, end);
 
   grid.innerHTML = "";
   pageItems.forEach((fileName, index) => {
     grid.appendChild(createImageCard(fileName, start + index));
   });
 
-  count.textContent = `Showing ${start + 1}-${Math.min(end, availableImages.length)} of ${availableImages.length} images`;
+  count.textContent = `Showing ${start + 1}-${Math.min(end, galleryImages.length)} of ${galleryImages.length} images`;
   renderImagePagination(totalPages);
+  loadVisibleMedia();
 }
 
 function renderVideoGallery() {
@@ -471,6 +489,7 @@ function renderVideoGallery() {
 
   count.textContent = `Showing ${start + 1}-${Math.min(end, galleryVideos.length)} of ${galleryVideos.length} videos`;
   renderVideoPagination(totalPages);
+  loadVisibleMedia();
 }
 
 function openLightbox(type, index) {
