@@ -107,9 +107,6 @@ header.nav{
     var(--ink);
   overflow:hidden;
 }
-.hero .grid-bg{position:absolute;inset:0;opacity:.7;
-  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
-  background-size:54px 54px;mask-image:radial-gradient(circle at 50% 30%,#000,transparent 75%);}
 .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;position:relative}
 .hero h1 span{color:var(--volt)}
 .hero .lead{margin:24px 0 32px}
