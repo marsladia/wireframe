@@ -260,11 +260,13 @@ const galleryVideos = [
 
 const imagePerPage = 8;
 const videoPerPage = 2;
+const initialImageBatch = 8;
 let currentImagePage = 1;
 let currentVideoPage = 1;
 let activeLightboxType = "image";
 let activeLightboxIndex = 0;
 let currentImageItems = [];
+let allImageItems = [];
 const imageExistenceCache = new Map();
 
 function getImagePath(fileName) {
@@ -490,26 +492,29 @@ async function renderImageGallery() {
 
   if (!grid || !count) return;
 
-  const availableImages = [];
-  for (const fileName of galleryImages) {
-    const resolvedSrc = await resolveImagePath(fileName);
-    if (resolvedSrc) {
-      availableImages.push({ fileName, src: resolvedSrc });
+  if (!allImageItems.length) {
+    const availableImages = [];
+    for (const fileName of galleryImages) {
+      const resolvedSrc = await resolveImagePath(fileName);
+      if (resolvedSrc) {
+        availableImages.push({ fileName, src: resolvedSrc });
+      }
     }
+    allImageItems = availableImages;
   }
 
-  currentImageItems = availableImages;
-  const totalPages = Math.ceil(availableImages.length / imagePerPage);
+  currentImageItems = allImageItems.slice(0, initialImageBatch);
+  const totalPages = Math.ceil(allImageItems.length / imagePerPage);
   const start = (currentImagePage - 1) * imagePerPage;
   const end = start + imagePerPage;
-  const pageItems = availableImages.slice(start, end);
+  const pageItems = allImageItems.slice(start, end);
 
   grid.innerHTML = "";
   pageItems.forEach((item, index) => {
     grid.appendChild(createImageCard(item, start + index));
   });
 
-  count.textContent = `Showing ${start + 1}-${Math.min(end, availableImages.length)} of ${availableImages.length} images`;
+  count.textContent = `Showing ${start + 1}-${Math.min(end, allImageItems.length)} of ${allImageItems.length} images`;
   renderImagePagination(totalPages);
   loadVisibleMedia();
 }
