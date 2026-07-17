@@ -1,50 +1,16 @@
+// Curated best-of set (all verified Red-Top-free).
 const galleryImages = [
-  "Jaguar E-type install - fastest car back then.webp",
-  "Jaguar E-Type install - interior.webp",
-  "Jaguar E-Type install - interior2.webp",
-  "Jaguar E-type install circle - fastest car back then.webp",
-  "Jaguar E-type install1.webp",
-  "Jaguar E-type install10.webp",
-  "jump pack ALWAYSTART_STILL_07.webp",
-  "Lexus IS install circle.webp",
-  "Lexus IS install.webp",
-  "Lexus IS install2.webp",
-  "Lexus IS install3.webp",
-  "Luggage (1024 x 588 px).webp",
   "Mustang install city bkgd.webp",
-  "Mustang install city bkgd2.webp",
-  "Mustang install guy working.webp",
-  "Mustang install under hood.webp",
-  "Mustang install under hood2.webp",
-  "Mustang install under hood3.webp",
-  "Nissan 350Z install on build car.webp",
-  "Overland Accessories.webp",
-  "Overland ALWAYSTART_STILL_04.webp",
-  "overland Jeep checking battery.webp",
-  "overlander Jeep install camping site.webp",
   "overlander Jeep install enjoying sunset.webp",
-  "Overlander Toyota 4Runner install circle.webp",
   "Overlander Toyota 4Runner install full.webp",
-  "Overlander smiling because of AlwayStart.webp",
-  "RV install1.webp",
-  "RV install2.webp",
-  "RV install3.webp",
-  "Truck install closer brick wall bkgd.webp",
-  "Twisted cablesr1.webp",
+  "Jaguar E-type install1.webp",
+  "Nissan 350Z install on build car.webp",
+  "Overlander forest view.webp",
+  "Lexus IS install.webp",
 ];
 
-const galleryVideos = [
-  {
-    title: "Product overview",
-    src: "media/alwaystart-overview.mp4",
-    poster: "assets/AS installed BMW2.jpg",
-  },
-  {
-    title: "3D walkthrough",
-    src: "media/alwaystart-how-it-works-3d.mp4",
-    poster: "assets/AS installed BMW2.jpg",
-  },
-];
+// Walkthrough videos intentionally omitted pending a clean (Red-Top-free) re-cut.
+const galleryVideos = [];
 
 const imagePerPage = 8;
 const videoPerPage = 2;
@@ -300,6 +266,14 @@ function renderVideoGallery() {
   const totalPages = Math.ceil(galleryVideos.length / videoPerPage);
 
   if (!grid || !count) return;
+
+  if (galleryVideos.length === 0) {
+    grid.innerHTML = "";
+    const pagination = document.getElementById("video-gallery-pagination");
+    if (pagination) pagination.innerHTML = "";
+    count.textContent = "Walkthrough videos coming soon.";
+    return;
+  }
 
   const start = (currentVideoPage - 1) * videoPerPage;
   const end = start + videoPerPage;

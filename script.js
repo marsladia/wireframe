@@ -1,4 +1,4 @@
-/* AlwayStart prototype — interactions */
+/* AlwayStart prototype, interactions */
 document.addEventListener("DOMContentLoaded", function () {
   // Mobile nav toggle
   var toggle = document.querySelector(".nav-toggle");
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Demo "buy" / form buttons — prototype only
+  // Demo "buy" / form buttons, prototype only
   document.querySelectorAll("[data-demo]").forEach(function (el) {
     el.addEventListener("click", function (ev) {
       ev.preventDefault();
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Newsletter forms (prototype) — homepage section + footer mini form
+  // Newsletter forms (prototype), homepage section + footer mini form
   document.querySelectorAll("form[data-news]").forEach(function (nf) {
     nf.addEventListener("submit", function (ev) {
       ev.preventDefault();
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Hero slider — auto-looping with controls
+  // Hero slider, auto-looping with controls
   (function () {
     var slider = document.getElementById("heroSlider");
     if (!slider) return;
@@ -141,4 +141,43 @@ document.addEventListener("DOMContentLoaded", function () {
       form.reset();
     });
   }
+
+  // Influencer video modal (click a clip to play)
+  (function () {
+    var links = document.querySelectorAll("a.clip[data-video]");
+    if (!links.length) return;
+    var modal = document.createElement("div");
+    modal.className = "video-modal";
+    modal.setAttribute("aria-hidden", "true");
+    modal.innerHTML =
+      '<button class="video-close" aria-label="Close">&times;</button>' +
+      '<div class="video-stage"><video controls playsinline preload="none"></video></div>';
+    document.body.appendChild(modal);
+    var video = modal.querySelector("video");
+
+    function open(src) {
+      video.src = src;
+      modal.classList.add("open");
+      modal.setAttribute("aria-hidden", "false");
+      video.play().catch(function () {});
+    }
+    function close() {
+      video.pause();
+      video.removeAttribute("src");
+      video.load();
+      modal.classList.remove("open");
+      modal.setAttribute("aria-hidden", "true");
+    }
+    links.forEach(function (a) {
+      a.addEventListener("click", function (e) {
+        e.preventDefault();
+        open(a.getAttribute("href"));
+      });
+    });
+    modal.querySelector(".video-close").addEventListener("click", close);
+    modal.addEventListener("click", function (e) { if (e.target === modal) close(); });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && modal.classList.contains("open")) close();
+    });
+  })();
 });
